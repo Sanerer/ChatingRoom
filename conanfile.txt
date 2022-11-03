@@ -1,0 +1,12 @@
+[requires]
+catch2/2.13.7
+docopt.cpp/0.6.3
+spdlog/1.8.5
+json-schema-validator/2.1.0
+boost/1.75.0
+
+[generators]
+cmake
+
+[imports]
+bin, *.dll -> ../out/bin
