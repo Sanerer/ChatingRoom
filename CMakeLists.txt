@@ -103,7 +103,8 @@ if(UDI_BUILD_TOOLS)
     set(UDI_BUILD_TOOL_CLI ON)
 endif()
 
-add_subdirectory(./src)
+add_subdirectory(./tests)
+# add_subdirectory(./src)
 
 if(UDI_BUILD_TESTS)
     add_subdirectory(./tests)
