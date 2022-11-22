@@ -77,10 +77,6 @@ def init_environ():
         os.environ["UDI_SERVICE_VERSION"] = read_version_from_properties(
             "version.properties")
 
-    if "UDI_UI_VERSION" not in os.environ:
-        os.environ["UDI_UI_VERSION"] = read_version_from_properties(
-            "tools/udi-debug-gui/version.properties")
-
     if sys.platform != "win32" and "SELF_UPGRADE" not in os.environ:
         os.environ["SELF_UPGRADE"] = "0"
 
@@ -242,7 +238,7 @@ def print_xml_coverage(xml):
 def run_unit_test(arguments, build_path):
     repeat = 1 if not arguments["-r"] else int(arguments["-r"])
     tags = arguments["-t"] if arguments["-t"] else ""
-    command = "{}/bin/UdiServerTest --abort {}".format(build_path, tags)
+    command = "{}/bin/ChatingRoomTester --abort {}".format(build_path, tags)
     outdir = "Coverage"
     outfile = "Coverage.xml"
 

@@ -98,26 +98,7 @@ if(UDI_BUILD_ASSISTANT)
     set(UDI_BUILD_TOOL_GUI ON)
 endif()
 
-if(UDI_BUILD_TOOLS)
-    set(UDI_BUILD_TOOL_GUI ON)
-    set(UDI_BUILD_TOOL_CLI ON)
-endif()
 
 add_subdirectory(./tests)
 # add_subdirectory(./src)
 
-if(UDI_BUILD_TESTS)
-    add_subdirectory(./tests)
-endif()
-
-if(UDI_BUILD_ASSISTANT)
-    add_subdirectory(./tools/udi-assistant)
-endif()
-
-if(UDI_BUILD_TOOL_GUI)
-    add_subdirectory(./tools/udi-debug-gui)
-endif()
-
-if(UDI_BUILD_TOOL_CLI)
-    add_subdirectory(./tools/udi-cli)
-endif()
