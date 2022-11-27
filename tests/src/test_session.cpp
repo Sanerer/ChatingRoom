@@ -1,8 +1,5 @@
-#include <chrono>
+
 #include <exception>
-#include <sstream>
-#include <string>
-#include <ctime>
 
 #include "boost/asio/buffer.hpp"
 #include "boost/asio/io_context.hpp"
@@ -15,19 +12,9 @@
 
 #include "boost/asio.hpp"
 
+#include "common/day_time_string.h"
+
 using namespace boost::asio::ip;
-
-namespace {
-
-std::string DayTimeString() {
-    auto now = std::chrono::system_clock::now();
-    std::time_t today_time = std::chrono::system_clock::to_time_t(now);
-    std::ostringstream stream;
-    stream << std::ctime(&today_time);
-    return stream.str();
-}
-
-}  // namespace
 
 TEST_CASE("init session", "[init]") {
     spdlog::info("start to run : {}", DayTimeString());
