@@ -1,4 +1,4 @@
-﻿if (WIN32)
+﻿if(WIN32)
     set(MINI_VERSION 3.15.0)
 else()
     set(MINI_VERSION 3.13.0)
@@ -65,10 +65,9 @@ if(WIN32)
     set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 endif()
 
-if (UNIX AND NOT ANDROID)
+if(UNIX AND NOT ANDROID)
     add_compile_definitions(JM_XORSTR_DISABLE_AVX_INTRINSICS)
 endif()
-
 
 set(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR}/out)
 
@@ -98,7 +97,5 @@ if(UDI_BUILD_ASSISTANT)
     set(UDI_BUILD_TOOL_GUI ON)
 endif()
 
-
-add_subdirectory(./tests)
-# add_subdirectory(./src)
-
+# add_subdirectory(./tests)
+add_subdirectory(./examples)
